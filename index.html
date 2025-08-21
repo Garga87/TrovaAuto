@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrovaAuto - Trova la tua auto ideale</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__logo">🚗 TrovaAuto</h1>
+                <nav class="header__nav">
+                    <button class="btn btn--ghost btn--sm" id="navHome">Home</button>
+                    <button class="btn btn--ghost btn--sm" id="navTraining">Training</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Homepage -->
+        <section id="homepage" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero__content">
+                        <h2 class="hero__title">Trova l'automobile<br>perfetta per te</h2>
+                        <p class="hero__description">
+                            Un wizard intelligente ti guiderà nella scelta dell'auto ideale basandosi sulle tue esigenze reali, 
+                            budget e preferenze tecnologiche ADAS.
+                        </p>
+                        <button class="btn btn--primary btn--lg" id="startWizard">
+                            Inizia la ricerca 🔍
+                        </button>
+                        <div class="hero__stats">
+                            <div class="stat">
+                                <div class="stat__number">500+</div>
+                                <div class="stat__label">Auto nel database</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">25+</div>
+                                <div class="stat__label">Brand supportati</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">98%</div>
+                                <div class="stat__label">Accuratezza matching</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🎯</div>
+                        <h3 class="feature-card__title">Matching Intelligente</h3>
+                        <p class="feature-card__description">Algoritmo avanzato che analizza le tue esigenze per trovare l'auto perfetta</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🛡️</div>
+                        <h3 class="feature-card__title">Tecnologie ADAS</h3>
+                        <p class="feature-card__description">Guida completa alle ultime tecnologie di sicurezza automotive</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">💰</div>
+                        <h3 class="feature-card__title">Preventivi Reali</h3>
+                        <p class="feature-card__description">Calcolo prezzi accurato con optional e configurazioni personalizzate</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📱</div>
+                        <h3 class="feature-card__title">Mobile First</h3>
+                        <p class="feature-card__description">Esperienza ottimizzata per smartphone e tablet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wizard Steps -->
+        <section id="wizard" class="page">
+            <div class="container">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-bar__track">
+                        <div class="progress-bar__fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step__number">1</div>
+                            <div class="step__label">Esigenze Base</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step__number">2</div>
+                            <div class="step__label">ADAS & Sicurezza</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step__number">3</div>
+                            <div class="step__label">Infotainment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Requirements -->
+                <div class="wizard-step active" id="step1">
+                    <div class="wizard-content">
+                        <h2 class="wizard-title">Le tue esigenze di base</h2>
+                        <p class="wizard-subtitle">Iniziamo con le caratteristiche fondamentali</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Quanti posti ti servono?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="seats" value="2">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">🏎️</div>
+                                        <div class="radio-card__title">2 posti</div>
+                                        <div class="radio-card__subtitle">Sportiva/Coupe</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="seats" value="4">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">🚗</div>
+                                        <div class="radio-card__title">4-5 posti</div>
+                                        <div class="radio-card__subtitle">Berlina/Hatchback</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="seats" value="7">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">🚐</div>
+                                        <div class="radio-card__title">7+ posti</div>
+                                        <div class="radio-card__subtitle">Familiare/SUV</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Qual è il tuo budget?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="budget" value="budget">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">€15.000 - €25.000</div>
+                                        <div class="radio-card__subtitle">Budget</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="budget" value="medio">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">€25.000 - €40.000</div>
+                                        <div class="radio-card__subtitle">Medio</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="budget" value="premium">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">€40.000 - €60.000</div>
+                                        <div class="radio-card__subtitle">Premium</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="budget" value="luxury">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">€60.000+</div>
+                                        <div class="radio-card__subtitle">Luxury</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Che tipo di motorizzazione preferisci?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="fuel" value="benzina">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">⛽</div>
+                                        <div class="radio-card__title">Benzina</div>
+                                        <div class="radio-card__subtitle">Tradizionale</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="fuel" value="diesel">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">🚛</div>
+                                        <div class="radio-card__title">Diesel</div>
+                                        <div class="radio-card__subtitle">Efficiente</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="fuel" value="ibrido">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">🔋</div>
+                                        <div class="radio-card__title">Ibrido</div>
+                                        <div class="radio-card__subtitle">Eco-friendly</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="fuel" value="elettrico">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__icon">⚡</div>
+                                        <div class="radio-card__title">Elettrico</div>
+                                        <div class="radio-card__subtitle">Zero emissioni</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Che tipo di trazione?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="drivetrain" value="FWD">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">FWD</div>
+                                        <div class="radio-card__subtitle">Trazione anteriore</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="drivetrain" value="RWD">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">RWD</div>
+                                        <div class="radio-card__subtitle">Trazione posteriore</div>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="drivetrain" value="AWD">
+                                    <div class="radio-card__content">
+                                        <div class="radio-card__title">AWD/4WD</div>
+                                        <div class="radio-card__subtitle">Trazione integrale</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: ADAS Features -->
+                <div class="wizard-step" id="step2">
+                    <div class="wizard-content">
+                        <h2 class="wizard-title">Tecnologie ADAS & Sicurezza</h2>
+                        <p class="wizard-subtitle">Seleziona le tecnologie di sicurezza che ritieni importanti</p>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="adas" value="ACC">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__header">
+                                            <div class="checkbox-card__title">ACC - Adaptive Cruise Control</div>
+                                            <button type="button" class="info-btn" data-info="ACC">ℹ️</button>
+                                        </div>
+                                        <div class="checkbox-card__description">
+                                            Cruise control intelligente che mantiene la distanza di sicurezza
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="adas" value="AEB">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__header">
+                                            <div class="checkbox-card__title">AEB - Autonomous Emergency Braking</div>
+                                            <button type="button" class="info-btn" data-info="AEB">ℹ️</button>
+                                        </div>
+                                        <div class="checkbox-card__description">
+                                            Frenata automatica d'emergenza per evitare collisioni
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="adas" value="LKA">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__header">
+                                            <div class="checkbox-card__title">LKA - Lane Keeping Assist</div>
+                                            <button type="button" class="info-btn" data-info="LKA">ℹ️</button>
+                                        </div>
+                                        <div class="checkbox-card__description">
+                                            Assistenza al mantenimento della corsia di marcia
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="adas" value="BSM">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__header">
+                                            <div class="checkbox-card__title">BSM - Blind Spot Monitoring</div>
+                                            <button type="button" class="info-btn" data-info="BSM">ℹ️</button>
+                                        </div>
+                                        <div class="checkbox-card__description">
+                                            Monitoraggio degli angoli ciechi
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="priority-section">
+                            <label class="form-label">Quanto è importante per te la sicurezza?</label>
+                            <div class="slider-container">
+                                <input type="range" id="safetyPriority" min="1" max="5" value="3" class="slider">
+                                <div class="slider-labels">
+                                    <span>Non importante</span>
+                                    <span>Fondamentale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Infotainment -->
+                <div class="wizard-step" id="step3">
+                    <div class="wizard-content">
+                        <h2 class="wizard-title">Infotainment & Connettività</h2>
+                        <p class="wizard-subtitle">Personalizza la tua esperienza digitale in auto</p>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="infotainment" value="android_auto">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__title">Android Auto</div>
+                                        <div class="checkbox-card__description">
+                                            Integrazione smartphone Android nativa
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="infotainment" value="apple_carplay">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__title">Apple CarPlay</div>
+                                        <div class="checkbox-card__description">
+                                            Integrazione iPhone/iPad nativa
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="infotainment" value="premium_audio">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__title">Audio Premium</div>
+                                        <div class="checkbox-card__description">
+                                            Sistema audio di alta qualità (Bose, Harman Kardon, etc.)
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="infotainment" value="large_display">
+                                    <div class="checkbox-card__content">
+                                        <div class="checkbox-card__title">Display Grande (>10")</div>
+                                        <div class="checkbox-card__description">
+                                            Schermo infotainment ampio per migliore usabilità
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="priority-section">
+                            <label class="form-label">Quanto è importante per te l'infotainment?</label>
+                            <div class="slider-container">
+                                <input type="range" id="infotainmentPriority" min="1" max="5" value="3" class="slider">
+                                <div class="slider-labels">
+                                    <span>Non importante</span>
+                                    <span>Fondamentale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="wizard-nav">
+                    <button type="button" class="btn btn--ghost" id="prevBtn" style="display: none;">
+                        ← Indietro
+                    </button>
+                    <button type="button" class="btn btn--primary" id="nextBtn">
+                        Avanti →
+                    </button>
+                    <button type="button" class="btn btn--primary" id="submitBtn" style="display: none;">
+                        Trova Auto 🔍
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Page -->
+        <section id="results" class="page">
+            <div class="container">
+                <div class="results-header">
+                    <h2 class="results-title">Le auto perfette per te</h2>
+                    <p class="results-subtitle">Trovate <span id="resultsCount">0</span> auto che corrispondono alle tue esigenze</p>
+                    <button class="btn btn--ghost" id="backToWizard">← Modifica criteri</button>
+                </div>
+
+                <div class="filters-bar">
+                    <select id="sortSelect" class="select">
+                        <option value="match">Migliore compatibilità</option>
+                        <option value="price_asc">Prezzo crescente</option>
+                        <option value="price_desc">Prezzo decrescente</option>
+                        <option value="brand">Per marca</option>
+                    </select>
+                </div>
+
+                <div id="carResults" class="car-grid">
+                    <!-- Dynamic content -->
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn--primary" id="compareSelected">
+                        Confronta Selezionate
+                    </button>
+                    <button class="btn btn--ghost" id="saveSearch">
+                        💾 Salva Ricerca
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Section -->
+        <section id="training" class="page">
+            <div class="container">
+                <div class="training-header">
+                    <h2 class="training-title">Training Center ADAS</h2>
+                    <p class="training-subtitle">Impara tutto sulle tecnologie automotive moderne</p>
+                </div>
+
+                <div class="training-categories">
+                    <button class="category-btn active" data-category="adas">🛡️ ADAS & Sicurezza</button>
+                    <button class="category-btn" data-category="infotainment">📱 Infotainment</button>
+                    <button class="category-btn" data-category="powertrain">⚡ Motorizzazioni</button>
+                </div>
+
+                <div class="training-content">
+                    <div class="training-category active" id="adas-training">
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>ACC - Adaptive Cruise Control</h3>
+                                <span class="training-badge">Sicurezza</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Che cos'è:</strong> Sistema di cruise control intelligente che mantiene automaticamente la distanza di sicurezza dal veicolo che precede, regolando la velocità.</p>
+                                <p><strong>Come funziona:</strong> Utilizza radar e/o camere per monitorare il traffico davanti al veicolo e regola automaticamente la velocità.</p>
+                                <p><strong>Benefici:</strong> Riduce lo stress di guida, migliora sicurezza e comfort nei viaggi lunghi.</p>
+                                <p><strong>Limitazioni:</strong> Non sostituisce l'attenzione del guidatore, può avere difficoltà in condizioni meteo avverse.</p>
+                            </div>
+                        </div>
+
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>AEB - Autonomous Emergency Braking</h3>
+                                <span class="training-badge">Sicurezza</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Che cos'è:</strong> Frenata automatica d'emergenza che interviene per evitare o ridurre l'impatto di una collisione imminente.</p>
+                                <p><strong>Come funziona:</strong> Sensori rilevano ostacoli e attivano i freni automaticamente se il guidatore non reagisce agli avvisi.</p>
+                                <p><strong>Benefici:</strong> Può salvare vite umane e ridurre la gravità degli incidenti.</p>
+                                <p><strong>Obbligatorietà UE:</strong> Obbligatorio sui nuovi modelli dal 2022 per ottenere 5 stelle Euro NCAP.</p>
+                            </div>
+                        </div>
+
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>LKA - Lane Keeping Assist</h3>
+                                <span class="training-badge">Sicurezza</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Che cos'è:</strong> Sistema che aiuta a mantenere il veicolo nella propria corsia di marcia.</p>
+                                <p><strong>Come funziona:</strong> Camere rilevano le linee della strada e correggono automaticamente la traiettoria se necessario.</p>
+                                <p><strong>Benefici:</strong> Previene uscite accidentali di carreggiata, utile in caso di distrazione o colpi di sonno.</p>
+                                <p><strong>Limitazioni:</strong> Richiede linee stradali ben visibili, può essere disattivato dal guidatore.</p>
+                            </div>
+                        </div>
+
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>BSM - Blind Spot Monitoring</h3>
+                                <span class="training-badge">Sicurezza</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Che cos'è:</strong> Monitoraggio dell'angolo cieco che avverte della presenza di veicoli nelle zone non visibili dagli specchietti.</p>
+                                <p><strong>Come funziona:</strong> Sensori radar negli specchietti rilevano veicoli nell'angolo cieco e attivano spie di avviso.</p>
+                                <p><strong>Benefici:</strong> Aumenta la sicurezza nei cambi di corsia e nelle manovre di sorpasso.</p>
+                                <p><strong>Varianti:</strong> Alcuni sistemi includono anche il monitoraggio del traffico trasversale posteriore (RCTA).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="training-category" id="infotainment-training">
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>Android Auto & Apple CarPlay</h3>
+                                <span class="training-badge">Connettività</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Che cos'è:</strong> Piattaforme che permettono l'integrazione nativa dello smartphone con il sistema infotainment dell'auto.</p>
+                                <p><strong>Funzionalità:</strong> Navigazione, chiamate, messaggi, musica e app compatibili direttamente sul display dell'auto.</p>
+                                <p><strong>Connessione:</strong> Può essere cablata (USB) o wireless (WiFi/Bluetooth) a seconda del veicolo.</p>
+                                <p><strong>Vantaggi:</strong> Interfaccia familiare, sicurezza maggiore, integrazione completa con l'ecosistema mobile.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="training-category" id="powertrain-training">
+                        <div class="training-card">
+                            <div class="training-card__header">
+                                <h3>Motorizzazioni Moderne</h3>
+                                <span class="training-badge">Motori</span>
+                            </div>
+                            <div class="training-card__content">
+                                <p><strong>Benzina:</strong> Motori tradizionali con tecnologie moderne come turbocompressori e iniezione diretta.</p>
+                                <p><strong>Diesel:</strong> Maggiore efficienza nei consumi, ideali per lunghe percorrenze, ma con normative ambientali sempre più stringenti.</p>
+                                <p><strong>Ibrido:</strong> Combinazione di motore termico ed elettrico per ridurre consumi ed emissioni.</p>
+                                <p><strong>Elettrico:</strong> Zero emissioni locali, autonomia in crescita, rete di ricarica in espansione.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Modal -->
+        <div id="comparisonModal" class="modal">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3>Confronto Auto Selezionate</h3>
+                    <button class="modal__close">&times;</button>
+                </div>
+                <div class="modal__body">
+                    <div id="comparisonTable">
+                        <!-- Dynamic comparison content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Tooltips -->
+        <div id="tooltip" class="tooltip">
+            <div class="tooltip__content"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>TrovaAuto</h4>
+                    <p>La piattaforma intelligente per trovare l'auto perfetta</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Funzionalità</h4>
+                    <ul>
+                        <li>Wizard Intelligente</li>
+                        <li>Database ADAS</li>
+                        <li>Training Center</li>
+                        <li>Preventivi Real-time</li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Guide</li>
+                        <li>Contatti</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 TrovaAuto. Prototipo sviluppato con GitHub Codespaces.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
